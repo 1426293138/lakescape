@@ -1,0 +1,148 @@
+﻿@charset "utf-8";
+
+/* ===== 引入网页字体 ===== */
+/* 把下面两行换成你文件夹里实际的字体文件名 */
+@font-face {
+    font-family: "ScriptFont";
+    src: url("cac_champagne.woff") format("woff"),
+         url("DobkinPlain.ttf") format("truetype");
+}
+
+/* ===== 页面布局：Grid 两栏 ===== */
+body {
+    background-color: darkkhaki;
+    color: #f5f5dc;
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+header { grid-column: 1 / -1; }
+#leftcol { grid-column: 1; }
+#rightcol { grid-column: 2; }
+footer { grid-column: 1 / -1; }
+
+/* 覆盖题目自带的浮动和宽度 */
+#leftcol, #rightcol {
+     float: none !important;
+     width: auto !important;
+     position: static !important;
+ }
+
+/* ===== 头部横幅图 ===== */
+header img {
+    width: 100%;
+    display: block;
+}
+
+/* ===== 顶部导航：Flexbox ===== */
+header nav {
+    background-color: rebeccapurple;
+    overflow: hidden;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+}
+header nav > ul > li {
+    padding: 0 10px;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+}
+header nav a:hover {
+    color: gold;
+}
+
+/* ===== 左栏主内容 ===== */
+#leftcol {
+    background-color: #1a1a10;
+    padding: 20px;
+    margin: 10px;
+    overflow: auto;
+}
+#leftcol h1 {
+    font-family: "ScriptFont", cursive;
+    color: white;
+    font-size: 2.5em;
+    margin: 0 0 15px 0;
+}
+#leftcol img {
+    width: 100%;
+}
+#leftcol p {
+    padding: 8px 10px;
+    margin: 10px 5px;
+    line-height: 1.5;
+}
+#leftcol p::first-letter {
+    font-size: 1.4em;
+    color: gold;
+}
+
+/* 底部两个小框并排 */
+#leftcol aside:first-of-type {
+    float: left;
+    width: 48%;
+    background-color: #e8a898;
+    color: #1a1a10;
+    padding: 15px;
+    box-sizing: border-box;
+}
+#leftcol aside:last-of-type {
+    float: right;
+    width: 48%;
+    background-color: #d4b86a;
+    color: #1a1a10;
+    padding: 15px;
+    box-sizing: border-box;
+}
+#leftcol aside h1 {
+    color: #1a1a10;
+}
+
+/* ===== 右栏侧栏 ===== */
+#rightcol {
+    background-color: rebeccapurple;
+    padding: 20px;
+    margin: 10px;
+}
+#rightcol h2 {
+    font-family: "ScriptFont", cursive;
+    color: white;
+}
+#rightcol nav ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+#rightcol nav a {
+    color: #e0d0ff;
+    text-decoration: none;
+}
+#rightcol nav a:hover {
+    color: gold;
+}
+
+/* ===== 客户评价：半透明 + 生成引号 ===== */
+#rightcol blockquote {
+    background-color: rgba(210, 150, 220, 0.55);
+    padding: 15px;
+    margin-top: 20px;
+    font-style: italic;
+}
+#rightcol blockquote::before {
+    content: "\201C";
+    font-size: 2em;
+    color: gold;
+}
+
+/* ===== 页脚 ===== */
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #333;
+}
