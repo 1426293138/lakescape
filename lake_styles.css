@@ -1,7 +1,6 @@
 ﻿@charset "utf-8";
 
 /* ===== 引入网页字体 ===== */
-/* 把下面两行换成你文件夹里实际的字体文件名 */
 @font-face {
     font-family: "ScriptFont";
     src: url("cac_champagne.woff") format("woff"),
